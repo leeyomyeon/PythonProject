@@ -22,7 +22,7 @@ def solution(expression):
         tmp_operand = copy.deepcopy(operand)
 
         for p in pr:
-            while(True):
+            while True:
                 if oper[p] not in tmp_operator:
                     break
                 else:
@@ -42,7 +42,7 @@ def solution(expression):
 
                         tmp_operand.insert(i, res)
 
-        if(abs(tmp_operand[0]) > answer):
+        if abs(tmp_operand[0]) > answer:
             answer = abs(tmp_operand[0])
 
     return answer
