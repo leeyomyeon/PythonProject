@@ -8,17 +8,17 @@ def solution(relation):
     for i in range(1, col + 1):
         c_key.extend(combinations(range(col)), i)
 
-    final = []
+    tmp = []
     for key in c_key:
         tmp = [tuple([item[key] for key in key]) for item in relation]
         if len(set(tmp)) == row:
-            final.append(key)
+            tmp.append(key)
 
-    answer = set(final[:])
-    for i in range(len(final)):
-        for j in range(i + 1, len(final)):
-            if len(final[i]) == len(set(final[i]).intersection(set(final[j]))):
-                answer.discard(final[j])
+    answer = set(tmp[:])
+    for i in range(len(tmp)):
+        for j in range(i + 1, len(tmp)):
+            if len(tmp[i]) == len(set(tmp[i]).intersection(set(tmp[j]))):
+                answer.discard(tmp[j])
 
     return len(answer)
 
